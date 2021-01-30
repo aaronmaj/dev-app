@@ -5,21 +5,18 @@ import com.dev.app.payment.domain.Payment;
 import com.dev.app.payment.dto.PaymentDto;
 import com.google.common.base.Preconditions;
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.convention.MatchingStrategies;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 import static com.dev.app.payment.util.Web.API;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(API+"/payments")
+@RequestMapping(API + "/payments")
 @RefreshScope
 class PaymentController {
 
@@ -33,12 +30,13 @@ class PaymentController {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public PaymentDto findById(@PathVariable("id") Long id){
+    public PaymentDto findById(@PathVariable("id") Long id) {
         return paymentService.findById(id);
     }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public PaymentDto create(@RequestBody Payment payment){
+    public PaymentDto create(@RequestBody Payment payment) {
         Preconditions.checkNotNull(payment);
         return null; // to be implemented
     }

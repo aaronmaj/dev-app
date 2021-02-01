@@ -15,7 +15,10 @@ public class PaymentServiceApplication {
 	//System.setProperty(AbstractEnvironment.ACTIVE_PROFILES_PROPERTY_NAME, "dev");
 
 	public static void main(String[] args) {
-		SpringApplication.run(PaymentServiceApplication.class, args);
+		SpringApplication app = new SpringApplication(PaymentServiceApplication.class);
+		app.setLazyInitialization(false);
+		app.run(args);
+
 	}
 
 	@Bean

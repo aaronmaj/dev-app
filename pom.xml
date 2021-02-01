@@ -7,9 +7,12 @@
     <groupId>com.dev-app</groupId>
     <artifactId>dev-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <!--developers>
+        <developer></developer>
+    </developers-->
     <properties>
         <java.version>11</java.version>
-        <app.profiles>test,dev,prod</app.profiles>
+        <!--app.profiles>test,dev,prod</app.profiles-->
         <spring-cloud.version>2020.0.0</spring-cloud.version>
     </properties>
     <modules>

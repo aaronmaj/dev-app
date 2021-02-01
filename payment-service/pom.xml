@@ -12,7 +12,8 @@
     <groupId>com.dev.app</groupId>
     <artifactId>payment-service</artifactId>
     <packaging>jar</packaging>
-    <description>Payment project for Spring Boot</description>
+    <name>Payment Service</name>
+    <description>Collections Payment Service</description>
     <properties>
         <java.version>11</java.version>
         <app.profiles>test,dev,prod</app.profiles>

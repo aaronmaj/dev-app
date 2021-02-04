@@ -1,7 +1,7 @@
 package com.dev.app.payment.controller;
 
+import com.dev.app.common.resources.dto.PaymentDto;
 import com.dev.app.payment.service.PaymentService;
-import com.dev.app.payment.dto.PaymentDto;
 import com.google.common.base.Preconditions;
 import lombok.RequiredArgsConstructor;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-import static com.dev.app.payment.util.Web.API;
+import static com.dev.app.common.resources.util.Web.API;
 
 @RequiredArgsConstructor
 @RestController

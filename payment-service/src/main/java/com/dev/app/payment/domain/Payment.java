@@ -1,5 +1,6 @@
 package com.dev.app.payment.domain;
 
+import com.dev.app.common.resources.domain.AbstractEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "payments")
-public class Payment {
+public class Payment extends AbstractEntity {
 
     @Id
     private Long id;

@@ -1,7 +1,7 @@
 package com.dev.app.payment.hateoas.listener;
 
 import com.dev.app.payment.hateoas.event.ResourceRetrievedEvent;
-import com.dev.app.payment.util.LinkUtil;
+import com.dev.app.common.resources.util.LinkUtil;
 import com.google.common.base.Preconditions;
 import com.google.common.net.HttpHeaders;
 import org.springframework.context.ApplicationListener;

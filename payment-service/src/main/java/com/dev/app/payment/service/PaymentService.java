@@ -1,7 +1,7 @@
 package com.dev.app.payment.service;
 
+import com.dev.app.common.resources.dto.PaymentDto;
 import com.dev.app.payment.domain.Payment;
-import com.dev.app.payment.dto.PaymentDto;
 import com.dev.app.payment.repository.PaymentRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.dev.app.payment.util;
+package com.dev.app.common.resources.util;
 import javax.servlet.http.HttpServletResponse;
 
 /**

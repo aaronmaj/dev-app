@@ -1,7 +1,11 @@
 package com.dev.app.account.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
+
+import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -14,8 +18,9 @@ public class Category implements Serializable {
     @Column(name = "category_name", nullable = false, unique = true)
     private String name;
     private String description;
-    @OneToMany(fetch=FetchType.EAGER,mappedBy = "category",cascade=CascadeType.ALL)
-    private List<SubCategory> subCategories;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "category", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Set<SubCategory> subCategories;
 
 
 }

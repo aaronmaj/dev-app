@@ -12,6 +12,9 @@ import static com.dev.app.common.resources.util.Web.API;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(value = API+"/accounts")
+/**
+ * Created by Aaron on 02/04/2021.
+ */
 public class AcountController {
 
     private  final AccountService accountService;

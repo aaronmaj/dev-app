@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import static com.dev.app.common.resources.util.Web.API;
 /**
  * @author Aaron MAJAMBO
- * Created by Aaron on 02/04/2021.
+ * Created by Aaron on 02/04/2021
  */
 
 @RequiredArgsConstructor

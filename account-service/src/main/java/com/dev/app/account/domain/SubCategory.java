@@ -16,7 +16,7 @@ public class SubCategory implements Serializable {
     @Id
     @GeneratedValue
     @Column(name = "code")
-    private Integer id;
+    private Long id;
     @NotNull
     @Column(name = "name", nullable = false, unique = true)
     private String name;

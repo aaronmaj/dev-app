@@ -39,9 +39,9 @@ public class CustomerService {
         log.debug("Creating/updating a new customer with name : {}...", customerDto.getName());
         return convertToDto(customerRepository.save(convertToEntity(customerDto)));
     }
-    public String delete(CustomerDto customerDto){
-        log.debug("Deleting customer with Id : {}...", customerDto.getId());
-        customerRepository.delete(convertToEntity(customerDto));
+    public String delete(Long id){
+        log.debug("Deleting customer with Id : {}...", id);
+        customerRepository.deleteById(id);
         return "Customer deleted successfully";
     }
     private CustomerDto convertToDto(Customer customer) {

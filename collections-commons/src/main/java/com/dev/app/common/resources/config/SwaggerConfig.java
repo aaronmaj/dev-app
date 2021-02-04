@@ -1,4 +1,4 @@
-package com.dev.app.payment.config;
+package com.dev.app.common.resources.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

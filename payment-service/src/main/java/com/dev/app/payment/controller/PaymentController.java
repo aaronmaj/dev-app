@@ -1,13 +1,13 @@
 package com.dev.app.payment.controller;
 
 import com.dev.app.payment.service.PaymentService;
-import com.dev.app.payment.domain.Payment;
 import com.dev.app.payment.dto.PaymentDto;
 import com.google.common.base.Preconditions;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -34,11 +34,11 @@ class PaymentController {
         return paymentService.findById(id);
     }
 
-    @PostMapping
+    @PostMapping//Equivalent to  @RequestMapping(method =RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public PaymentDto create(@RequestBody Payment payment) {
-        Preconditions.checkNotNull(payment);
-        return null; // to be implemented
+    public ResponseEntity<PaymentDto> create(@RequestBody PaymentDto paymentDto) {
+        Preconditions.checkNotNull(paymentDto);
+        return ResponseEntity.ok(paymentService.save(paymentDto)); // to be implemented
     }
 
 

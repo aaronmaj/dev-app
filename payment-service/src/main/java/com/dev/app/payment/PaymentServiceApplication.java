@@ -1,4 +1,4 @@
-package com.dev.app;
+package com.dev.app.payment;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.Banner;
@@ -7,10 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.core.env.AbstractEnvironment;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
-import java.util.Properties;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy
@@ -34,5 +31,7 @@ public class PaymentServiceApplication {
 	public ModelMapper getModelMapper(){
 		return new ModelMapper();
 	}
+
+	
 
 }

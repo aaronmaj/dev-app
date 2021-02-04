@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -41,6 +40,12 @@ public class PaymentService {
     @Transactional
     public PaymentDto findById(Long id) {
         return paymentRepository.findById(id).map(payment -> convertToDto(payment)).orElse(null);
+    }
+
+    public PaymentDto save(PaymentDto paymentDto){
+        return convertToDto(
+                paymentRepository.save(modelMapper.map(paymentDto,Payment.class))
+        );
     }
 
     private PaymentDto convertToDto(Payment payment) {

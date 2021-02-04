@@ -1,4 +1,4 @@
-package com.dev.app.payment.domain;
+package com.dev.app.common.resources.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;

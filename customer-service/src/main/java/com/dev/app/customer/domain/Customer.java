@@ -11,6 +11,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name="customers")
 public class Customer{
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,9 +21,9 @@ public class Customer{
     private String firstName;
     @NotNull
     @Column(name ="last_name", nullable = false)
-    private String lasttName;
+    private String lastName;
     @Column(name="customer_name")
-    private String customerNaame;
+    private String customerName;
     private String msisdn;
     @Column(name="id_number", unique = true)
     private String idNumber;

@@ -1,17 +1,19 @@
 package com.dev.app.payment;
 
-import org.modelmapper.ModelMapper;
+import com.dev.app.common.resources.config.MapperConfig;
+import com.dev.app.common.resources.config.SwaggerConfig;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Import;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy
 @EnableSwagger2
+@Import({SwaggerConfig.class, MapperConfig.class})
 public class PaymentServiceApplication {
 	//you can use -Dspring.profiles.active=dev when starting app instead of hardcoding it
 	//System.setProperty(AbstractEnvironment.ACTIVE_PROFILES_PROPERTY_NAME, "dev");
@@ -26,12 +28,4 @@ public class PaymentServiceApplication {
 		app.run(args);
 
 	}
-
-	@Bean
-	public ModelMapper getModelMapper(){
-		return new ModelMapper();
-	}
-
-	
-
 }

@@ -20,5 +20,6 @@
         <module>config-server</module>
         <module>customer-service</module>
         <module>collections-commons</module>
+        <module>account-service</module>
     </modules>
 </project>

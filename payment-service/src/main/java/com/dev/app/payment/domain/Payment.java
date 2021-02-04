@@ -20,6 +20,12 @@ public class Payment extends AbstractEntity {
     @Id
     private Long id;
     private String externalPaymentId;
+    private String referenceNo;
+    private PaymentStatus paymentStatus;
+    private String status;
+    private double amount;
+    private String description;
+
 
 
 }

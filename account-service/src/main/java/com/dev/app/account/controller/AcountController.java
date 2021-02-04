@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import static com.dev.app.common.resources.util.Web.API;
+/**
+ * @author Aaron MAJAMBO
+ * Created by Aaron on 02/04/2021.
+ */
 
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(value = API+"/accounts")
-/**
- * Created by Aaron on 02/04/2021.
- */
 public class AcountController {
 
     private  final AccountService accountService;

@@ -26,7 +26,7 @@ public class Payment extends AbstractEntity {
     private String referenceNo;
     @Enumerated(EnumType.STRING)
     @Column(name="status")
-    private PaymentStatus paymentStatus;
+    private PaymentStatus status;
     private double amount;
     private String description;
 

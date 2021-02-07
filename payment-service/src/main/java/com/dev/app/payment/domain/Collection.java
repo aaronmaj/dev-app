@@ -3,10 +3,12 @@ package com.dev.app.payment.domain;
 import com.dev.app.common.resources.domain.AbstractEntity;
 import com.dev.app.payment.domain.enumeration.CollectionStatus;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
 @Data
+@NoArgsConstructor
 @Entity
 @Table(name="collections")
 public class Collection extends AbstractEntity {

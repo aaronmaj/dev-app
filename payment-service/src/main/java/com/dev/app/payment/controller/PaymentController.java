@@ -9,6 +9,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 
@@ -24,7 +25,7 @@ class PaymentController {
 
     @GetMapping
     public List<PaymentDto> getAllPayments() {
-        return paymentService.getAll();
+        return paymentService.findAll();
 
     }
 
@@ -38,7 +39,23 @@ class PaymentController {
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<PaymentDto> create(@RequestBody PaymentDto paymentDto) {
         Preconditions.checkNotNull(paymentDto);
-        return ResponseEntity.ok(paymentService.save(paymentDto)); // to be implemented
+        return new ResponseEntity<>(paymentService.save(paymentDto), HttpStatus.CREATED); // to be implemented
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<PaymentDto> update(@PathVariable("id") Long id, @RequestBody PaymentDto paymentDto) {
+
+
+        return (!paymentService.existsById(id)) ?
+                new ResponseEntity<>(paymentService.save(paymentDto), HttpStatus.CREATED) :
+                ResponseEntity.ok(paymentService.update(id, paymentDto));
+
+    }
+
+    @DeleteMapping(value = "/id")
+    public PaymentDto delete(@PathVariable("id") Long id) {
+        //paymentService.findAll().removeIf(paymentDto -> paymentDto.getId().equals(id));
+        return paymentService.delete(id);
     }
 
 

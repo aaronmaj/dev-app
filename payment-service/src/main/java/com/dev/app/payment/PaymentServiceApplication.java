@@ -6,11 +6,15 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
+@ConfigurationPropertiesScan
 @EnableAspectJAutoProxy
 @EnableSwagger2
 @Import({SwaggerConfig.class, MapperConfig.class})
@@ -28,4 +32,13 @@ public class PaymentServiceApplication {
 		app.run(args);
 
 	}
+	/* Wrap third-party components and incorporate their properties into the application’s Environment”
+
+	@Bean
+	@ConfigurationProperties(prefix = "security")
+	DefinedClass createBean(){
+		return new DefinedClass();
+	}
+
+	 */
 }

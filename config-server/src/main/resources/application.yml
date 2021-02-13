@@ -1,3 +1,5 @@
+server:
+  port: 8888
 spring:
   application:
     name: config-server
@@ -5,6 +7,14 @@ spring:
     config:
       server:
         native:
+          #search-locations: classpath:/configurations  if the configuration files are under /resources/configurations folder
           search-locations: ${HOME}/config-repo/spring-cloud-config
   profiles:
     active: native
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework.web: DEBUG
+    web: debug
+    root: debug

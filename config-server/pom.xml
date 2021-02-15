@@ -10,10 +10,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <artifactId>centralized-config-serverice</artifactId>
+    <artifactId>config-server</artifactId>
     <groupId>com.dev-app.config</groupId>
+    <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>centralized-configuration-service</name>
+
+    <name>config-server</name>
+
     <description>Spring Boot Cloud Config Server</description>
 
     <properties>

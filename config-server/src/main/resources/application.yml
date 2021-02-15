@@ -1,3 +1,5 @@
+server:
+  port: 8888
 spring:
   cloud:
     config:
@@ -7,10 +9,3 @@ spring:
           search-locations: ${HOME}/config-repo/spring-cloud-config
   profiles:
     active: native
-logging:
-  pattern:
-    console: "%d %-5level %logger : %msg%n"
-  level:
-    org.springframework.web: DEBUG
-    web: debug
-    root: debug

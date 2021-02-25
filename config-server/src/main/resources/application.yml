@@ -7,5 +7,9 @@ spring:
         native:
           #search-locations: classpath:/configurations  if the configuration files are under /resources/configurations folder
           search-locations: ${HOME}/config-repo/spring-cloud-config
+        #git:
+          #uri: git@github.com:aaronmaj/springcloud-configuration.git
+          #cloneOnStart: true
   profiles:
+    #active: git
     active: native
